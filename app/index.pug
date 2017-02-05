@@ -1,0 +1,72 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+
+        link(href='css/css-libs/core.css' rel='stylesheet')
+        link(href='css/css-libs/datepicker.css' rel='stylesheet')
+        link(href='css/css-libs/theme.css' rel='stylesheet')
+        link(href='css/css-libs/jquery-ui-timepicker-addon.min.css' rel='stylesheet')
+        link(href='css/main.css' rel='stylesheet')
+
+        //
+         [if lt IE 9]>
+         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+         <![endif]
+        title.
+            'My Template'
+    body
+
+        table
+            thead
+                tr
+                    th= 'Status'
+                    th= 'Description'
+                    th= 'Daedline'
+            tfoot
+                tr
+                    td(colspan='4')
+                        form
+
+            tr
+                td
+                    input(type='checkbox')
+                td
+                    p= 'Task description'
+                td
+                    span= '25.08.2017 10:30:45'
+                td
+                    a(href='#')= 'Remove'
+            tr
+                td
+                    input(type='checkbox')
+                td
+                    p= 'Task description'
+                td
+                    span= '25.08.2017 10:30:45'
+                td
+                    a(href='#')= 'Remove'
+            tr
+                td
+                    input(type='checkbox')
+                td
+                    p= 'Task description'
+                td
+                    span= '25.08.2017 10:30:45'
+                td
+                    a(href='#')= 'Remove'
+
+        .todo-list-wrap
+
+        .todo-list-wrap-second
+
+        // jQuery (necessary for Bootstrap's JavaScript plugins)
+        script(src='js/vendor/jquery.min.js')
+        script(src='js/vendor/jquery-ui.min.js')
+        script(src='js/vendor/jquery-ui-timepicker-addon.min.js')
+        // Include all compiled plugins (below), or include individual files as needed
+        script(src='js/lib/jquery.todo.js')
+        script(src='js/main.js')

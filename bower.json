@@ -1,0 +1,27 @@
+{
+  "name": "My_portfolio_puck",
+  "description": "static coding only",
+  "main": "gulpfile.js",
+  "authors": [
+    "Arthur Khomenko"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "bootstrap3",
+    "coding"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "jquery-ui": "^1.12.1",
+    "jqueryui-timepicker-addon": "^1.6.3"
+  }
+}

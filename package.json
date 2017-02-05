@@ -1,0 +1,40 @@
+{
+  "name": "My_portfolio_puck",
+  "version": "1.0.0",
+  "description": "static coding only",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "coding"
+  ],
+  "author": "Arthur Khomenko",
+  "license": "ISC",
+  "homepage": "",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-pug": "^3.2.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^2.2.3",
+    "gulp-uglify": "^1.5.1",
+    "gulp-watch": "^4.3.11",
+    "gulp-webserver": "^0.9.1",
+    "imagemin-pngquant": "^4.2.0",
+    "merge": "^1.2.0",
+    "run-sequence": "^1.1.5",
+    "watch": "^1.0.1"
+  },
+  "dependencies": {
+    "jstransformer-markdown-it": "^2.0.0"
+  }
+}
