@@ -5,7 +5,9 @@
             emptyText: 'Data not available',
             removeAllText: 'Data deleted',
             tableClassName: 'todo-table',
-            removeControlText: 'Remove'
+            removeControlText: 'Remove',
+            headersList: ['Status', 'Description', 'Daed Line', "Controls"],
+            formDecorFunc: function(){}
         }, options);
 
     var Todo = function(element){
@@ -15,6 +17,7 @@
         this.tableClassName = options.tableClassName;
         this.tableTemplate = "<table class=" + this.tableClassName + "></table>";
         this.dataListData = options.dataListData;
+        this.headersList = options.headersList;
         this.todoRemoveItemClassName = 'todo-remove-item';
         this.removeControl = function(arrIndex){
             return "<a href='#' class='" + this.todoRemoveItemClassName + "' data-row-index='" + arrIndex + "'>" + options.removeControlText + "</a>";
@@ -45,6 +48,7 @@
                                     "</div>" +
                                 "</form>" +
                             "</div>";
+        this.formDecorFunc = options.formDecorFunc;
     };
 
         Todo.prototype.tableCreate = function(){
@@ -60,6 +64,7 @@
 
         Todo.prototype.tableRender = function(){
             this.element.html(this.tableTemplate);
+            this.headerRowCreate(this.headersList);
             this.rowCreate();
             this.colCreate();
             this.removeItem();
@@ -81,6 +86,22 @@
 
         }
 
+        Todo.prototype.headerRowCreate = function(headers){
+
+            var arr = this.dataListData,
+                headers = this.headersList;
+            this.element.find("."+this.tableClassName).prepend("<thead><tr></tr></thead>");
+            for ( var i = 0; i < arr[0].length; i++ ) {
+
+                if ( i == arr[0].length - 1 ) {
+                    this.element.find("."+this.tableClassName).find("thead:first").find("tr").append("<th>" + headers[i] + "</th><th>" + headers[i + 1] + "</th>");
+                } else {
+                    this.element.find("."+this.tableClassName).find("thead:first").find("tr").append("<th>" + headers[i] + "</th>");
+                }
+            }
+
+        }
+
         Todo.prototype.rowCreate = function(){
 
             var arr = this.dataListData;
@@ -91,7 +112,7 @@
         }
 
         Todo.prototype.colCreate = function(){
-            var row = this.element.find('.'+this.tableClassName).find("tr"),
+            var row = this.element.find('.'+this.tableClassName).find("tbody").find("tr"),
                 rowCounter = row.length;
 
             for ( var i = 0; i < rowCounter; i++ ){
@@ -133,6 +154,7 @@
         Todo.prototype.formCreate = function(){
             this.element.append(this.formTemplate);
             this.formAddItem();
+            this.formDecorFunc();
         }
 
         Todo.prototype.formAddItem = function(){

@@ -38,7 +38,16 @@ var path = {
 /*--------------------------------------------------------------
  images files
  --------------------------------------------------------------*/
-gulp.task('img:dist', function () {
+// jQuery UI images lib
+gulp.task('bower-img-libs:app', function () {
+    var themeName = 'base';
+    return gulp.src([
+        path.bowerComponents + 'jquery-ui/themes/' + themeName + '/images/**/*.png'
+    ])
+        .pipe( gulp.dest(path.dist.css + 'css-libs/images/') );
+});
+
+gulp.task('img:dist', ['bower-img-libs:app'], function () {
     return gulp.src([
             path.app.img
         ])
@@ -59,6 +68,7 @@ gulp.task('bower-css-libs:app', function () {
     return gulp.src([
             path.bowerComponents + 'jquery-ui/themes/' + themeName + '/core.css',
             path.bowerComponents + 'jquery-ui/themes/' + themeName + '/datepicker.css',
+            path.bowerComponents + 'jquery-ui/themes/' + themeName + '/slider.css',
             path.bowerComponents + 'jquery-ui/themes/' + themeName + '/theme.css',
             path.bowerComponents + 'jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css'
         ])
@@ -85,7 +95,8 @@ gulp.task('bower-js-libs:app', function () {
     return gulp.src([
                 path.bowerComponents + 'jquery/dist/jquery.min.js',
                 path.bowerComponents + 'jquery-ui/jquery-ui.min.js',
-                path.bowerComponents + 'jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js'
+                path.bowerComponents + 'jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js',
+                path.bowerComponents + 'jqueryui-timepicker-addon/dist/jquery-ui-sliderAccess.js'
            ])
            .pipe( gulp.dest(path.dist.js + '/vendor') );
 });
