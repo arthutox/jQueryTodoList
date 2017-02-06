@@ -78,7 +78,7 @@ gulp.task('sass:app:dist',['bower-css-libs:app'], function(){
     return gulp.src(path.app.sass)
         .pipe(sourcemaps.init())
         .pipe(sass({
-            outputStyle: 'compressed'
+            //outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 3 versions', 'ie 9'],

@@ -7,7 +7,9 @@
             tableClassName: 'todo-table',
             removeControlText: 'Remove',
             headersList: ['Status', 'Description', 'Daed Line', "Controls"],
-            formDecorFunc: function(){}
+            formDecorFunc: null,
+            formAction: '',
+            formMethod: ''
         }, options);
 
     var Todo = function(element){
@@ -32,19 +34,23 @@
         this.todoTextPlaceholder = 'Enter text';
         this.todoTimePlaceholder = 'DD.MM.YYYY	HH:MI:SS';
         this.todoAdddButtonText = "Add Item";
+        this.formAction = '';
+        this.formMethod = '';
         this.formTemplate = "<div class='todo-add-item-form-box'>" +
-                                "<form>" +
-                                    "<div>" +
-                                        "<input type='checkbox' class='" + this.classTodoStatus + "' />" +
-                                    "</div>" +
-                                    "<div>" +
-                                        "<textarea placeholder='" + this.todoTextPlaceholder + "' class='" + this.classTodoText + "'></textarea>" +
-                                    "</div>" +
-                                    "<div>" +
-                                        "<input type='text' placeholder='" + this.todoTimePlaceholder + "' class='" + this.classTodoDaedline + "' />" +
-                                    "</div>" +
-                                    "<div>" +
-                                        "<button type='button' class='" + this.classTodoAdd + "'>" + this.todoAdddButtonText + "</button>" +
+                                "<form action='"+this.formAction+"' method='"+this.formMethod+"'>" +
+                                    "<div class='todo-add-item-form-box__row'>" +
+                                        "<div class='todo-add-item-form-box__col'>" +
+                                            "<input type='checkbox' class='" + this.classTodoStatus + "' />" +
+                                        "</div>" +
+                                        "<div class='todo-add-item-form-box__col'>" +
+                                            "<textarea placeholder='" + this.todoTextPlaceholder + "' class='" + this.classTodoText + "'></textarea>" +
+                                        "</div>" +
+                                        "<div class='todo-add-item-form-box__col'>" +
+                                            "<input type='text' placeholder='" + this.todoTimePlaceholder + "' class='" + this.classTodoDaedline + "' />" +
+                                        "</div>" +
+                                        "<div class='todo-add-item-form-box__col'>" +
+                                            "<button type='button' class='" + this.classTodoAdd + "'>" + this.todoAdddButtonText + "</button>" +
+                                        "</div>" +
                                     "</div>" +
                                 "</form>" +
                             "</div>";
